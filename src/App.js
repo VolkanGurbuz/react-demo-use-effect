@@ -30,7 +30,7 @@ function App() {
 
     //the new context object will be passed down to all listening(consuming) components
     return (
-        <AuthContext.Provider value={{isLoggedIn: isLoggedIn,}}>
+        <AuthContext.Provider value={{isLoggedIn: isLoggedIn, onLogout: logoutHandler}}>
             <MainHeader onLogout={logoutHandler}/>
             <main>
                 {!isLoggedIn && <Login onLogin={loginHandler}/>}
